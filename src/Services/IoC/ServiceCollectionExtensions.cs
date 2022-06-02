@@ -1,15 +1,15 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Repository;
-using Repository.Abstractions.Interfaces;
+using Microsoft.Extensions.Configuration;
 using Repository.Context;
+using Repository.Abstractions.Interfaces;
+using Repository;
 using Services.Abstractions.Interfaces;
 
 namespace Services.IoC
 {
     public static class ServiceCollectionExtensions
-    {
+    {        
         public static IServiceCollection AddDatabases(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<OpenWorkoutContext>(options =>
@@ -22,7 +22,7 @@ namespace Services.IoC
             return services;
         }
 
-        public static IServiceCollection AddServices(this IServiceCollection services)
+        public static IServiceCollection AddInterfaces(this IServiceCollection services)
         {
             services.AddTransient<IMuscleGroupService, MuscleGroupService>();
 

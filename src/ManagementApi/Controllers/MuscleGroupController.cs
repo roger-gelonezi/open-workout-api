@@ -1,11 +1,12 @@
 ﻿using ManagementApi.Mappers;
 using ManagementApi.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Services.Abstractions.Interfaces;
 
 namespace ManagementApi.Controllers
 {
-    [ApiExplorerSettings(GroupName = "v1")]
+    [Authorize]
     [Route("[controller]")]
     [ApiController]
     public class MuscleGroupController : ControllerBase

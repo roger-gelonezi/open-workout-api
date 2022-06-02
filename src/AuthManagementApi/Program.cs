@@ -7,9 +7,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services
-    .AddSwagger()
+    .AddSwagger(builder.Configuration)
     .AddDatabase(builder.Configuration)
     .AddIdentityJwt(builder.Configuration)
+    .AddAuthentication(builder.Configuration)
     .AddInterfaces()
     .AddFilters()
     .AddNewtonsoftJson();

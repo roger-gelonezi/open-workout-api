@@ -1,28 +1,23 @@
-﻿using AuthManagementApi.Filters;
-using Microsoft.OpenApi.Models;
+﻿using Microsoft.OpenApi.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using AuthManagementApi.Context;
-using Microsoft.EntityFrameworkCore;
-using AuthManagementApi.Models;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Converters;
-using AuthManagementApi.Interfaces;
-using AuthManagementApi.Services;
 using System.Reflection;
 using Newtonsoft.Json.Serialization;
 using System.ComponentModel;
 using Microsoft.AspNetCore.Mvc;
+using ManagementApi.Filters;
+using ManagementApi.Models;
+using Microsoft.IdentityModel.Tokens;
 
-namespace AuthManagementApi.Extensions
+namespace ManagementApi.Extensions
 {
-    public static class IServiceCollectionExtensions
+    public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddSwagger(this IServiceCollection services)
+        public static IServiceCollection AddSwagger(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Auth Management API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = configuration["SwaggerTitle"], Version = configuration["SwaggerApiVersion"] });
                 c.OperationFilter<ApiResponsesOperationFilter>();
                 c.DocumentFilter<TagDescriptionsDocumentFilter>();
                 c.CustomSchemaIds(x => x.GetCustomAttributes<DisplayNameAttribute>()?.SingleOrDefault()?.DisplayName ?? x.Name);
@@ -59,38 +54,8 @@ namespace AuthManagementApi.Extensions
             return services;
         }
 
-        public static IServiceCollection AddDatabase(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddAuthentication(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<AuthManagementContext>(options =>
-            {
-                options.UseSqlServer(configuration.GetConnectionString("AuthManagementDb"));
-            });
-
-            return services;
-        }
-
-        public static IServiceCollection AddIdentityJwt(this IServiceCollection services, IConfiguration configuration)
-        {
-            services.AddIdentity<Login, IdentityRole>(options =>
-            {
-                options.Password.RequiredLength = 8;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequireLowercase = false;
-                options.Password.RequireDigit = false;
-                options.Password.RequiredUniqueChars = 4;
-
-                options.SignIn.RequireConfirmedAccount = false;
-
-                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(1);
-                options.Lockout.MaxFailedAccessAttempts = 5;
-                options.Lockout.AllowedForNewUsers = true;
-
-                options.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-                options.User.RequireUniqueEmail = false;
-
-            }).AddEntityFrameworkStores<AuthManagementContext>();
-
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = "JwtBearer";
@@ -108,14 +73,6 @@ namespace AuthManagementApi.Extensions
                     IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(configuration["SecretJWT"]))
                 };
             });
-
-            return services;
-        }
-
-        public static IServiceCollection AddInterfaces(this IServiceCollection services)
-        {
-            services.AddTransient<ILoginService, LoginService>();
-            services.AddTransient<IRegisterService, RegisterService>();
 
             return services;
         }
