@@ -1,5 +1,4 @@
-﻿using Entities;
-using Repository.Abstractions.Interfaces;
+﻿using Repository.Abstractions.Interfaces;
 using Services.Abstractions.Dto;
 using Services.Abstractions.Interfaces;
 using Services.Mappers;

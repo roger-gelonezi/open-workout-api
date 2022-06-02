@@ -1,9 +1,6 @@
 ﻿using ManagementApi.Mappers;
 using ManagementApi.ViewModel;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Services;
 using Services.Abstractions.Interfaces;
 
 namespace ManagementApi.Controllers

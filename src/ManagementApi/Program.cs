@@ -1,6 +1,7 @@
 using ManagementApi.Filters;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Converters;
+using Newtonsoft.Json.Serialization;
 using Services.IoC;
 using System.Reflection;
 
@@ -25,8 +26,11 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddControllersWithViews()
-                    .AddNewtonsoftJson(options =>
-                        options.SerializerSettings.Converters.Add(new StringEnumConverter()));
+    .AddNewtonsoftJson(options =>
+    {
+        options.SerializerSettings.Converters.Add(new StringEnumConverter());
+        options.SerializerSettings.ContractResolver = new DefaultContractResolver { NamingStrategy = new SnakeCaseNamingStrategy() };
+    });
 
 builder.Services.AddSwaggerGenNewtonsoftSupport();
 builder.Services.AddMvc(options =>

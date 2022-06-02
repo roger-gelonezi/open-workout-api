@@ -1,5 +1,4 @@
-﻿using Repository.Abstractions;
-using Entities;
+﻿using Entities;
 
 namespace Repository.Abstractions.Interfaces
 {

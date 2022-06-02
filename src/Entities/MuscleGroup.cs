@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using Entities.Abstractions;
+﻿using Entities.Abstractions;
 
 namespace Entities
 {
