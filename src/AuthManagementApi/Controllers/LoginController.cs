@@ -1,5 +1,7 @@
-﻿using AuthManagementApi.Interfaces;
-using AuthManagementApi.Models;
+﻿using AuthManagementApi.Mappers;
+using AuthManagementApi.ViewModels;
+using AuthSdk.Interfaces;
+using Global.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,6 +18,9 @@ namespace AuthManagementApi.Controllers
             _loginService = loginService;
         }
 
+        /// <summary>
+        /// Provides a new token.
+        /// </summary>
         [AllowAnonymous]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(LoginSucessoViewModel))]
@@ -25,7 +30,7 @@ namespace AuthManagementApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Token(LoginViewModel login)
         {
-            var token = await _loginService.Login(login);
+            var token = await _loginService.Login(login.ToDto());
 
             if (!string.IsNullOrEmpty(token))
             {                

@@ -1,5 +1,7 @@
-﻿using AuthManagementApi.Interfaces;
-using AuthManagementApi.Models;
+﻿using AuthManagementApi.Mappers;
+using AuthManagementApi.ViewModels;
+using AuthSdk.Interfaces;
+using Global.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,15 +19,18 @@ namespace AuthManagementApi.Controllers
             _registerService = registerService;
         }
 
+        /// <summary>
+        /// Register a new authorized user.
+        /// </summary>
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ErrorResponse))]
         [ProducesResponseType(StatusCodes.Status401Unauthorized, Type = typeof(ErrorResponse))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(ErrorResponse))]
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterViewModel registerViewModel)
         {
-            var result = await _registerService.Register(model);
+            var result = await _registerService.Register(registerViewModel.ToDto());
             
             if (result.Succeeded)
             {

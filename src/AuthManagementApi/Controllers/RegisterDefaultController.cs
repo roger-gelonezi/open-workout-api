@@ -1,5 +1,7 @@
-﻿using AuthManagementApi.Interfaces;
-using AuthManagementApi.Models;
+﻿using AuthManagementApi.Constants;
+using AuthSdk.Dto;
+using AuthSdk.Interfaces;
+using Global.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +20,9 @@ namespace AuthManagementApi.Controllers
             _configuration = configuration;
         }
 
+        /// <summary>
+        /// Register the default user from environment variables.
+        /// </summary>
         [AllowAnonymous]
         [Produces("application/json")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
@@ -26,17 +31,17 @@ namespace AuthManagementApi.Controllers
         [HttpPost]
         public async Task<IActionResult> RegisterDefault()
         {
-            var registerViewModel = new RegisterViewModel
+            var registerDto = new RegisterDto
             {
-                UserName = _configuration["DefaultUserName"],
-                Password = _configuration["DefaultPassword"]
+                UserName = DefaultLoginConstants.GetDefaultUserName(_configuration),
+                Password = DefaultLoginConstants.GetDefaulPassword(_configuration)
             };
 
-            var result = await _registerService.Register(registerViewModel);
+            var result = await _registerService.Register(registerDto);
 
             if (result.Succeeded)
             {
-                return Ok(result);
+                return NoContent();
             }
 
             return BadRequest(ErrorResponse.FromIdentity(result.Errors));

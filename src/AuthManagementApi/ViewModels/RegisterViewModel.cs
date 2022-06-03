@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace AuthManagementApi.Models
+namespace AuthManagementApi.ViewModels
 {
-    [DisplayName("Login")]
-    public class LoginViewModel
+    [DisplayName("Register")]
+    public class RegisterViewModel
     {
         [Required]
         [MinLength(5)]
@@ -13,5 +13,6 @@ namespace AuthManagementApi.Models
         [Required]
         [MinLength(4)]
         public string Password { get; set; }
+        public Guid UserId { get; set; }
     }
 }

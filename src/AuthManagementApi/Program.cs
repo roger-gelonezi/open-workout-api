@@ -1,4 +1,6 @@
 using AuthManagementApi.Extensions;
+using AuthSdk.IoC;
+using StartupSdk.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,13 +9,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services
-    .AddSwagger(builder.Configuration)
-    .AddDatabase(builder.Configuration)
-    .AddIdentityJwt(builder.Configuration)
-    .AddAuthentication(builder.Configuration)
     .AddInterfaces()
-    .AddFilters()
-    .AddNewtonsoftJson();
+    .AuthStartup(builder.Configuration)
+    .MainStartup(builder.Configuration);
 
 var app = builder.Build();
 

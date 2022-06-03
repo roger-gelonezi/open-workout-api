@@ -1,17 +1,17 @@
-﻿using AuthManagementApi.Models;
+﻿using AuthSdk.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace AuthManagementApi.Context
+namespace AuthSdk.Context
 {
-    public class AuthManagementContext : IdentityDbContext<Login>
+    public class AuthContext : IdentityDbContext<Login>
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
         }
 
-        public AuthManagementContext(DbContextOptions<AuthManagementContext> options)
+        public AuthContext(DbContextOptions<AuthContext> options)
             : base(options)
         {
             this.Database.EnsureCreated();

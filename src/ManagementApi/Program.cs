@@ -1,10 +1,5 @@
 using ManagementApi.Extensions;
-using ManagementApi.Filters;
-using Microsoft.OpenApi.Models;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Serialization;
 using Services.IoC;
-using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 

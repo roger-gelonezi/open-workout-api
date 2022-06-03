@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace AuthManagementApi.Models
+namespace AuthSdk.Models
 {
     public class Login : IdentityUser
     {
-        public Guid AthleteId { get; set; }
+        public Guid UserId { get; set; }
     }
 }

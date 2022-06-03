@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace AuthManagementApi.Models
+namespace AuthManagementApi.ViewModels
 {
     [DisplayName("LoginSucesso")]
     public class LoginSucessoViewModel

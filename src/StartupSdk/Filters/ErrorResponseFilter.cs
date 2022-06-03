@@ -1,8 +1,8 @@
-﻿using AuthManagementApi.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
+using Global.Models;
 
-namespace AuthManagementApi.Filters
+namespace StartupSdk.Filters
 {
     public class ErrorResponseFilter : IExceptionFilter
     {
