@@ -5,6 +5,7 @@ using Repository.Context;
 using Repository.Abstractions.Interfaces;
 using Repository;
 using Services.Abstractions.Interfaces;
+using Services.Services;
 
 namespace Services.IoC
 {

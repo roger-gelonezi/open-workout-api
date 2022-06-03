@@ -31,9 +31,9 @@ namespace Repository.Abstractions
         public virtual void Insert(TEntity entity)
         {
             if (Exists(entity.Id))
-                return;
+                throw new DbUpdateException("The given Id already exists in the table");
 
-            entity.CreationDate = entity.LastUpdate = DateTime.Now;
+            entity.LastUpdate = DateTime.Now;
 
             _dbSet.Add(entity);
             _context.SaveChanges();
@@ -42,9 +42,9 @@ namespace Repository.Abstractions
         public virtual async Task InsertAsync(TEntity entity, CancellationToken cancellationToken)
         {
             if (await ExistsAsync(entity.Id, cancellationToken))
-                return;
+                throw new DbUpdateException("The given Id already exists in the table");
 
-            entity.CreationDate = entity.LastUpdate = DateTime.Now;
+            entity.LastUpdate = DateTime.Now;
 
             await _dbSet.AddAsync(entity, cancellationToken);
             await _context.SaveChangesAsync(true, cancellationToken);
@@ -53,7 +53,7 @@ namespace Repository.Abstractions
         public virtual void Update(TEntity entity)
         {
             if (Exists(entity.Id) == false)
-                return;
+                throw new DbUpdateException("The given Id do not exists in the table");
 
             entity.LastUpdate = DateTime.Now;
 
@@ -64,8 +64,8 @@ namespace Repository.Abstractions
         public virtual async Task UpdateAsync(TEntity entity, CancellationToken cancellationToken)
         {
             if (await ExistsAsync(entity.Id, cancellationToken) == false)
-                return;
-
+                throw new DbUpdateException("The given Id do not exists in the table");
+            
             entity.LastUpdate = DateTime.Now;
 
             _dbSet.Update(entity);

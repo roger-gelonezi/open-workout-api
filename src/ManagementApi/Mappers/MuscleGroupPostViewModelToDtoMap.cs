@@ -3,7 +3,7 @@ using Services.Abstractions.Dto;
 
 namespace ManagementApi.Mappers
 {
-    public static class MuscleGroupPostViewModelToDto
+    public static class MuscleGroupPostViewModelToDtoMap
     {
         public static MuscleGroupInsertDto ToDto(this MuscleGroupPostViewModel muscleGroupPostViewModel)
         {

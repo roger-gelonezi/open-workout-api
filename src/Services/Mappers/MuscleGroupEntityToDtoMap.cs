@@ -10,7 +10,6 @@ namespace Services.Mappers
             var muscleGroupDto = new MuscleGroupDto()
             {
                 Id = muscleGroup.Id,
-                CreationDate = muscleGroup.CreationDate,
                 LastUpdate = muscleGroup.LastUpdate,
                 MuscleGroupName = muscleGroup.MuscleGroupName,
             };
