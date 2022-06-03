@@ -4,7 +4,7 @@
     {
         internal static string SnakeCaseToCamelCase(this string snakeCase)
         {
-            return snakeCase.Replace('_', ' ');
+            return snakeCase.Replace("_", string.Empty);
         }
     }
 }

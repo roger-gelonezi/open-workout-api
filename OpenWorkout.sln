@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StartupSdk", "src\StartupSd
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthSdk", "src\AuthSdk\AuthSdk.csproj", "{41A8EF4B-05EB-4A20-8022-360D9D32D216}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApiSdk", "src\WebApiSdk\WebApiSdk.csproj", "{54EC31ED-A076-4199-BE8C-2A34E834ADFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -94,6 +96,10 @@ Global
 		{41A8EF4B-05EB-4A20-8022-360D9D32D216}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41A8EF4B-05EB-4A20-8022-360D9D32D216}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41A8EF4B-05EB-4A20-8022-360D9D32D216}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54EC31ED-A076-4199-BE8C-2A34E834ADFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54EC31ED-A076-4199-BE8C-2A34E834ADFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54EC31ED-A076-4199-BE8C-2A34E834ADFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54EC31ED-A076-4199-BE8C-2A34E834ADFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +119,7 @@ Global
 		{DE3F875D-89B8-45C1-8D35-E9D8C4369554} = {3FC4C8BC-D0B8-44CA-831A-94F12ABE5E56}
 		{EEA28573-45A3-4587-A448-B7CBB51B0F3E} = {DE3F875D-89B8-45C1-8D35-E9D8C4369554}
 		{41A8EF4B-05EB-4A20-8022-360D9D32D216} = {DE3F875D-89B8-45C1-8D35-E9D8C4369554}
+		{54EC31ED-A076-4199-BE8C-2A34E834ADFB} = {DE3F875D-89B8-45C1-8D35-E9D8C4369554}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D6871123-5C38-4E00-9A3D-59E196E1EFA1}

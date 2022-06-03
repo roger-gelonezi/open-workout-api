@@ -1,5 +1,5 @@
-using ManagementApi.Extensions;
 using Services.IoC;
+using StartupSdk.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services
-    .AddSwagger(builder.Configuration)
-    .AddAuthentication(builder.Configuration)
-    .AddFilters()
-    .AddNewtonsoftJson();
+    .MainStartup(builder.Configuration);
 
 builder.Services
     .AddDatabases(builder.Configuration)

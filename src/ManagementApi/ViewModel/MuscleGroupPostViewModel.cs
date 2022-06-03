@@ -1,7 +1,9 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace ManagementApi.ViewModel
 {
+    [DisplayName("MuscleGroupPost")]
     public class MuscleGroupPostViewModel
     {
         [Required]

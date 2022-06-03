@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace ManagementApi.ViewModel
+namespace WebApiSdk.ViewModel
 {
     [DisplayName("PagedList")]
     public class PagedListViewModel<T> where T : class
@@ -15,7 +15,7 @@ namespace ManagementApi.ViewModel
 
         public int? Page { get; private set; }
         public int? PageCount =>
-            ItemsCount != null && PageSize != null
+            ItemsCount != null && PageSize != null && PageSize > 0
                 ? (int)Math.Ceiling((int)ItemsCount / (double)PageSize)
                 : null;
 
