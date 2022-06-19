@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>faeb4a05-ad45-47ff-b8f6-f6fe8f625618</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Auth.Services\Auth.Services.csproj" />
+    <ProjectReference Include="..\RogerioGelonezi.WebApi.Sdk\RogerioGelonezi.WebApi.Sdk.csproj" />
+  </ItemGroup>
+
+</Project>
