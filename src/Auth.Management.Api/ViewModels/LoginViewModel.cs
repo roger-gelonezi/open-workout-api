@@ -10,7 +10,7 @@ namespace Auth.Management.Api.ViewModels
         [MinLength(5)]
         [MaxLength(30)]
         public string UserName { get; set; }
-        
+
         [Required]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
