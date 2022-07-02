@@ -42,8 +42,8 @@ It has a social intent to allow small neighborhood gyms to technologically compe
   * :black_square_button: Docker Compose
     * :white_check_mark: Create Docker Compose with Required Services
     * :white_square_button: Extract Docker Compose in Templates
-  * :black_square_button: Authentication Manager
-    * Auth Manager Stack with Identity Framework
+  * :black_square_button: Authentication Management
+    * Auth Management Stack with Identity Framework
       * :white_check_mark: Create User Controller
       * :white_square_button: Update User Controller
       * :white_square_button: User Claims Controller
@@ -54,7 +54,7 @@ It has a social intent to allow small neighborhood gyms to technologically compe
     * :white_check_mark: Implement JWT Authorization (SDK)
     * :white_square_button: Unit Tests with XUnit
     * :white_square_button: Integration Tests with Robot Framework
-    * :white_square_button: Detach Auth Manager in another project on Github
+    * :white_square_button: Detach Auth Management in another project on Github
   * :black_square_button: Open Workout Management API
     * :white_check_mark: Implement JWT Authorization (SDK)
     * :white_square_button: Implement S3 Bucket Repository (SDK)
@@ -67,10 +67,10 @@ It has a social intent to allow small neighborhood gyms to technologically compe
     * :white_check_mark: Muscle Groups Controller
     * :white_square_button: Exercises Controller
     * :white_square_button: Trainings Controller
-    * :white_square_button: Series Controller
+    * :white_square_button: Exercise Series Controller
     * :white_square_button: Training Templates Controller
   * :white_square_button: Open Workout Athlete API
-    * :white_square_button: Implement Authentication (SDK)
+    * :white_square_button: Implement Authorization (SDK)
     * :white_square_button: Implement S3 Bucket Repository (SDK)
     * :white_square_button: Implement Elastic APM (SDK)
     * :white_square_button: Implement Console Logs (SDK)
@@ -80,7 +80,7 @@ It has a social intent to allow small neighborhood gyms to technologically compe
     * :white_square_button: Training Schedulle Controller
     * :white_square_button: Training Progress Controller
     * :white_square_button: Exercise Progress Controller
-    * :white_square_button: Series Progress Controller
+    * :white_square_button: Exercise Series Progress Controller
   * :white_square_button: Hello World Web App
   * :white_square_button: Hello World Android App
   * :white_square_button: Hello World iPhone App
