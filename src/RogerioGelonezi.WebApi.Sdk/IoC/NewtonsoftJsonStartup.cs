@@ -5,7 +5,7 @@ using RogerioGelonezi.WebApi.Sdk.IoC;
 
 namespace RogerioGelonezi.WebApi.Sdk.IoC
 {
-    internal static class NewtonsoftJson
+    internal static class NewtonsoftJsonStartup
     {
         internal static IServiceCollection AddNewtonsoftJson(this IServiceCollection services)
         {
