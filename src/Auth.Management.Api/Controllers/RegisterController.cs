@@ -37,7 +37,7 @@ namespace Auth.Management.Api.Controllers
                 return NoContent();
             }
 
-            return BadRequest(ErrorResponse.FromIdentity(result.Errors));
+            return BadRequest(ErrorResponseFactory.FromIdentity(result.Errors));
         }
     }
 }

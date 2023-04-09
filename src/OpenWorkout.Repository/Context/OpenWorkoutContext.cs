@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using OpenWorkout.Entities;
+using OpenWorkout.Repository.Configurations;
 
 namespace OpenWorkout.Repository.Context
 {
@@ -21,6 +22,13 @@ namespace OpenWorkout.Repository.Context
             }
 
             base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(MuscleGroupConfigurations).Assembly);
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

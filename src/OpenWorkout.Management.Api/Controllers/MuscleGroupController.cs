@@ -9,7 +9,7 @@ using OpenWorkout.Services.Abstractions.Dto;
 
 namespace OpenWorkout.Management.Api.Controllers
 {
-    [Authorize]
+    // [Authorize]
     [Route("[controller]")]
     [ApiController]
     public class MuscleGroupController : ControllerBase

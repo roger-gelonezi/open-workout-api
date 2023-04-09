@@ -14,7 +14,7 @@ namespace RogerioGelonezi.WebApi.Sdk.IoC
             {
                 options.InvalidModelStateResponseFactory = context =>
                 {
-                    return new BadRequestObjectResult(ErrorResponse.FromModelState(context.ModelState));
+                    return new BadRequestObjectResult(ErrorResponseFactory.FromModelState(context.ModelState));
                 };
             });
 

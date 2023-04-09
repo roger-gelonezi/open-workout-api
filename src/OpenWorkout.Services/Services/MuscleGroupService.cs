@@ -15,6 +15,7 @@ namespace OpenWorkout.Services.Services
         {
             _muscleGroupRepository = muscleGroupRepository;
         }
+
         public async Task<MuscleGroupDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken)
         {
             var muscleGroup = await _muscleGroupRepository.SelectByIdAsync(id, cancellationToken);
@@ -25,8 +26,15 @@ namespace OpenWorkout.Services.Services
         public async Task<MuscleGroupDto> InsertAsync(MuscleGroupInsertDto muscleGroupDto, CancellationToken cancellationToken)
         {
             var muscleGroup = muscleGroupDto.ToEntity();
-
-            await _muscleGroupRepository.InsertAsync(muscleGroup, cancellationToken);
+            
+            try
+            {
+                await _muscleGroupRepository.InsertAsync(muscleGroup, cancellationToken);
+            }
+            catch (Exception ex)
+            {
+                TratarException(ex);
+            }
 
             return muscleGroup.ToDto();
         }
@@ -65,5 +73,15 @@ namespace OpenWorkout.Services.Services
 
             return muscleGroupListCount;
         }
+
+        private void TratarException(Exception ex) // TODO: Adicionar um service de ExceptionHandler
+        {
+            throw ex switch
+            {
+                DbUpdateException => new Exception("Database Exception", ex),
+                _ => ex,
+            };
+        }
+
     }
 }

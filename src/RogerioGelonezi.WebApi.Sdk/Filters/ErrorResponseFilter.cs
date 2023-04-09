@@ -8,7 +8,7 @@ namespace RogerioGelonezi.WebApi.Sdk.Filters
     {
         public void OnException(ExceptionContext context)
         {
-            var errorResponse = ErrorResponse.FromException(context.Exception);
+            var errorResponse = ErrorResponseFactory.FromException(context.Exception);
             context.Result = new ObjectResult(errorResponse)
             {
                 StatusCode = ResolveStatusCode(context.Exception)
@@ -17,15 +17,12 @@ namespace RogerioGelonezi.WebApi.Sdk.Filters
 
         private static int ResolveStatusCode(Exception exception)
         {
-            switch (exception)
+            return exception switch
             {
-                case KeyNotFoundException:
-                    return 404;
-                case ArgumentException:
-                    return 400;
-                default:
-                    return 500;
-            }
+                KeyNotFoundException => 404,
+                ArgumentException => 400,
+                _ => 500,
+            };
         }
     }
 }

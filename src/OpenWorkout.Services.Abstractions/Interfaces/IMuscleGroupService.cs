@@ -2,7 +2,7 @@
 
 namespace OpenWorkout.Services.Abstractions.Interfaces
 {
-    public interface IMuscleGroupService
+    public interface IMuscleGroupService // TODO: Adicionar projeto Service no SDK e implementar classe ICrudService
     {
         Task<MuscleGroupDto?> GetByIdAsync(Guid id, CancellationToken cancellationToken);
         Task<MuscleGroupDto> InsertAsync(MuscleGroupInsertDto muscleGroupDto, CancellationToken cancellationToken);

@@ -11,11 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleTests", "tst\Console
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{9B732F13-73E7-4861-8E9E-6B50282DD6E1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FB567865-4E30-4322-ACB9-95F8711ABFFF}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sdk", "sdk", "{DE3F875D-89B8-45C1-8D35-E9D8C4369554}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "db", "db", "{BA9EC7B9-F271-4824-9EC7-2E56CA0FDA99}"
@@ -24,9 +19,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "svc", "svc", "{0B8EC10E-D26
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "auth", "auth", "{06F57E6F-04EB-4BD2-A204-F55D9FCC3C92}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.Services.Abstractions", "src\Auth.Services.Abstractions\Auth.Services.Abstractions.csproj", "{C95609DC-0EAB-452A-BC43-B4F5F7A64C80}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Services.Abstractions", "src\Auth.Services.Abstractions\Auth.Services.Abstractions.csproj", "{C95609DC-0EAB-452A-BC43-B4F5F7A64C80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.Login.Api", "src\Auth.Login.Api\Auth.Login.Api.csproj", "{275F27FF-5EE0-4988-A872-5040903F17C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Login.Api", "src\Auth.Login.Api\Auth.Login.Api.csproj", "{275F27FF-5EE0-4988-A872-5040903F17C2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Services", "src\Auth.Services\Auth.Services.csproj", "{422F0EC6-EB25-46A9-B057-7A4AD8F51136}"
 EndProject
@@ -48,9 +43,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenWorkout.Repository.Abst
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OpenWorkout.Repository", "src\OpenWorkout.Repository\OpenWorkout.Repository.csproj", "{B75CA6FF-F813-4CEF-B694-D1EDD0E86A69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RogerioGelonezi.Repository.Sdk", "src\RogerioGelonezi.Repository.Sdk\RogerioGelonezi.Repository.Sdk.csproj", "{BF119F9D-94F2-461E-BDE2-3B72BC1332AE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RogerioGelonezi.Repository.Sdk", "src\RogerioGelonezi.Repository.Sdk\RogerioGelonezi.Repository.Sdk.csproj", "{BF119F9D-94F2-461E-BDE2-3B72BC1332AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RogerioGelonezi.Entity.Sdk", "src\RogerioGelonezi.Entity.Sdk\RogerioGelonezi.Entity.Sdk.csproj", "{C0047229-D1B4-450C-830C-3E052A95EB6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RogerioGelonezi.Entity.Sdk", "src\RogerioGelonezi.Entity.Sdk\RogerioGelonezi.Entity.Sdk.csproj", "{C0047229-D1B4-450C-830C-3E052A95EB6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
