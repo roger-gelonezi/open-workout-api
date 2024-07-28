@@ -96,20 +96,14 @@ It has a social intent to allow small neighborhood gyms to technologically compe
 ## Tests
 ---
 
-## Contributors
----
-You can contribute to this project with coding or you can buy me a coffee:
-
-PayPal or Brazilian PIX: rogeriogelonezi@gmail.com
-
 ## Author
 ---
-<a href="https://github.com/rogerio-gelonezi">
+<a href="https://github.com/roger-gelonezi">
  <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/16666966?v=4" width="100px;" alt=""/>
  <br />
  <sub><b>Rogério Gelonezi</b></sub></a>
 
 Made with ❤️ by Rogério Gelonezi
 
-[![Twitter Badge](https://img.shields.io/badge/-@Roger-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/Roger_euMesmo)](https://twitter.com/Roger_euMesmo) [![Linkedin Badge](https://img.shields.io/badge/-Rogério-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rogeriogelonezi/)](https://www.linkedin.com/in/rogeriogelonezi/) 
+[![Linkedin Badge](https://img.shields.io/badge/-Rogério-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/rogeriogelonezi/)](https://www.linkedin.com/in/rogeriogelonezi/) 
 [![Gmail Badge](https://img.shields.io/badge/-rogeriogelonezi@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:rogeriogelonezi@gmail.com)](mailto:rogeriogelonezi@gmail.com)
